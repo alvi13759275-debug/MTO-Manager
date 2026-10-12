@@ -20,13 +20,10 @@ jobs:
         fi
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         java-version: '17'
         distribution: 'temurin'
-
-    - name: Setup Gradle Environment
-      uses: gradle/actions/setup-gradle@v3
 
     - name: Locate Project Directory and Build APK
       run: |
