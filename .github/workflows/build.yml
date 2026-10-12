@@ -34,9 +34,10 @@ jobs:
         fi
         
         if [ -f "gradlew" ]; then
+          rm -rf gradle/wrapper/gradle-wrapper.properties
+          gradle wrapper --gradle-version 8.5
           chmod +x gradlew
-          ./gradlew wrapper --gradle-version 8.5
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --no-daemon --warning-mode all
         else
           gradle assembleDebug --no-daemon
         fi
